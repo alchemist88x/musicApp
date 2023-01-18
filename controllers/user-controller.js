@@ -17,11 +17,11 @@ const getAlluser=async(req,res,next)=>{
 const signup=async(req,res,next)=>{
     const {user_name,email,password}=req.body
     console.log(req.body)
-    let existinguser;
+    let existinguser; 
     try {
         existinguser=await User.findOne({email})
         if(existinguser){
-        return res.status(400).json({message:"user already exisist"})
+        return res.status(400).json({message:"user already exisisted "})
         }
     } catch (error) {
          console.log(error)
